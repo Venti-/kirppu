@@ -2,6 +2,10 @@
     border: 1px solid black;
     width: 8cm;
 }
+.item_head {
+    float: left;
+    width: 1.75cm;
+}
 .item_info {
     float: left;
 }
@@ -10,12 +14,30 @@
     margin-left: 0.1cm;
     margin-top: 0.1cm;
 }
+.item_head .item_info_price {
+    width: 1.5cm; /* Width of price before scaling. */
+    text-align: center;
+    
+    /* Rotate and scale the price tag. Order of operations matters.
+     * 1. Translate left by width of this element, so top-right 
+     *    corner of price is on the top-left corner of price tag.
+     * 2. Rotate the price so it's sideways.
+     * 3. Scale the price by (tag height) / (price width) so it's
+     *    centered correctly.
+     */
+    transform-origin: left top;
+    transform:  scale(2) rotate(-90deg) translate(-100%, 0);
+}
 .item_even {
     float: left;
     clear: left;
 }
 .item_odd {
     float: left;
+}
+.item_long {
+    float: left;
+    width: 100%;
 }
 .item_container img {
     width: 5.5cm;

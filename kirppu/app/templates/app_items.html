@@ -9,7 +9,15 @@
 </head>
 <body>
 {% for i in items %}
-    <div class="item_container {% cycle 'item_even' 'item_odd' %}">
+    {% if tag_type == "short" %}
+        <div class="item_container {% cycle 'item_even' 'item_odd' %}">
+    {% elif tag_type == "long" %}
+        <div class="item_container item_long">
+            <div class="item_head">
+                <span class="item_list item_info_price">{{ i.price }}&nbsp;&euro;</span>
+            </div>
+    {% endif %}
+
         <div class="item_body">
             <div class="item_info">
                 <span class="item_list item_info_name">{{ i.name }}</span>
