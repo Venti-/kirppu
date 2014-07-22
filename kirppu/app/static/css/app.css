@@ -3,8 +3,12 @@
     width: 8cm;
 }
 .item_info {
-    margin-left: 0.5em;
-    margin-top: 0.5em;
+    float: left;
+}
+.item_body {
+    float: left;
+    margin-left: 0.1cm;
+    margin-top: 0.1cm;
 }
 .item_even {
     float: left;
@@ -16,7 +20,6 @@
 .item_container img {
     width: 5.5cm;
     float: left;
-    margin-left: 0.2em;
 }
 .clerk_container {
     border: 1px solid black;
@@ -29,7 +32,7 @@
 }
 .item_extra_info {
     float: left;
-    width: 2.1cm;
+    width: 2.3cm;
     overflow: hidden;
     white-space: nowrap;
     font-size: smaller;

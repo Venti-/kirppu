@@ -10,16 +10,17 @@
 <body>
 {% for i in items %}
     <div class="item_container {% cycle 'item_even' 'item_odd' %}">
-    <div class="item_info">
-        <span class="item_list item_info_name">{{ i.name }}</span>
-        <span class="item_list item_info_price">{{ i.price }}&euro;</span>
-    </div>
-    <img src="{% url 'kirppu:barcode' i.code bar_type %}"
-         alt="Barcode: {{ i.code }}" />
-    <div class="item_extra_info">
-        <span class="item_list">{{ i.vendor_id }}</span>
-        <span class="item_list item_extra_code">{{ i.code }}</span>
-    </div>
+        <div class="item_body">
+            <div class="item_info">
+                <span class="item_list item_info_name">{{ i.name }}</span>
+                <span class="item_list item_info_price">{{ i.price }}&nbsp;&euro;</span>
+                <img src="{% url 'kirppu:barcode' i.code bar_type %}" alt="Barcode: {{ i.code }}" />
+            </div>
+            <div class="item_extra_info">
+                <span class="item_list">{{ i.vendor_id }}</span>
+                <span class="item_list item_extra_code">{{ i.code }}</span>
+            </div>
+        </div>
     </div>
 {% endfor %}
 </body>
